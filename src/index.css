@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+
+@theme {
+  /* colores personalizables */
+  --color-bg: #111;
+  --color-bg-black: #0a0a0a --color-primary: #58c2c8;
+  --color-text-white: #fff;
+  --color-card-bg: #282828;
+}
+
+/* Estilos para que el carrusel Swiper quede igual a Fixdate */
+.swiper-pagination-bullet {
+  background: #22d3ee !important; /* Color Cian */
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  transform: scale(1.2);
+}
