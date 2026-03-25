@@ -1,6 +1,8 @@
 import { CountdownSection } from './components/CountdownSection'
 import { EventDetails } from './components/EventDetails'
+import { Footer } from './components/Footer'
 import Hero from './components/Hero'
+import { MusicSection } from './components/MusicSection'
 import { PhotoCarousel } from './components/PhotoCarusel'
 import { invitationData } from './data/invitacionData'
 
@@ -21,6 +23,8 @@ function App() {
         whatsappLink={`https://wa.me/${invitationData.confirmacion}?text=Hola%20${invitationData.nombre},%20confirmo%20mi%20asistencia%20a%20${invitationData.tipo}!`}
       />
       <PhotoCarousel photos={invitationData.fotos} />
+      <MusicSection playlistLink="" />
+      <Footer devName="EmiGe" socialLink="" />
     </>
   )
 }

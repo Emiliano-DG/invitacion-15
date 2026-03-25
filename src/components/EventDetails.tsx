@@ -30,17 +30,23 @@ export const EventDetails: React.FC<EventSectionProps> = ({
         </h2>
 
         {/* Sección Día */}
-        <div className="mb-10 w-full">
+        {/* <div className="mb-10 w-full">
           <h3 className="text-cyan-400 text-2xl font-light mb-2">Día</h3>
           <p className="text-white font-light mb-4">
             {fecha} - {hora}
           </p>
-          {/* <a
-            href={calendarLink}
-            className="inline-block w-full py-2 px-6 bg-cyan-500 text-white rounded-lg font-light text-sm shadow-[0_0_15px_rgba(6,182,212,0.4)] active:scale-95 transition"
-          >
-            Agendar
-          </a> */}
+        </div> */}
+        {/* --- SECCIÓN DÍA: Con recuadro para que no quede vacío --- */}
+        <div className="mb-12 w-full flex flex-col items-center">
+          <h3 className="text-cyan-400 text-2xl font-light mb-4">Día</h3>
+          <div className="w-full py-4 px-2 border border-dashed border-cyan-400/30 rounded-2xl bg-cyan-400/5">
+            <p className="text-white font-serif text-xl tracking-tight leading-none">
+              {fecha}
+            </p>
+            <p className="text-cyan-400/80 text-sm mt-2 font-light italic">
+              — {hora} hs —
+            </p>
+          </div>
         </div>
 
         {/* Sección Lugar */}

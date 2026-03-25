@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 interface TimeLeft {
   días: number
@@ -7,9 +7,7 @@ interface TimeLeft {
   seg: number
 }
 
-export const CountdownSection: React.FC<{ targetDate: string }> = ({
-  targetDate,
-}) => {
+export const CountdownSection = ({ targetDate }: { targetDate: string }) => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     días: 0,
     hs: 0,
@@ -40,7 +38,7 @@ export const CountdownSection: React.FC<{ targetDate: string }> = ({
       {/* Contenedor de Números */}
       <div className="flex items-center justify-center w-full max-w-sm">
         {Object.entries(timeLeft).map(([label, value], index, array) => (
-          <React.Fragment key={label}>
+          <div key={label} className="contents">
             <div className="flex flex-col items-center px-4">
               <span className="text-4xl md:text-5xl text-cyan-400 font-light mb-2">
                 {value}
@@ -54,12 +52,12 @@ export const CountdownSection: React.FC<{ targetDate: string }> = ({
             {index !== array.length - 1 && (
               <div className="h-16 w-px bg-white/30 self-start mt-2"></div>
             )}
-          </React.Fragment>
+          </div>
         ))}
       </div>
 
       {/* Icono de Corazón Inferior */}
-      <div className="mt-12 text-cyan-400 text-3xl animate-pulse">♥</div>
+      <div className="mt-8 text-cyan-400 text-5xl animate-pulse">♥</div>
     </section>
   )
 }

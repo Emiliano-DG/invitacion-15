@@ -1,6 +1,7 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
+import bolas from '../assets/bolas.png'
 
 // Importar estilos de Swiper
 import 'swiper/css'
@@ -19,7 +20,12 @@ export const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ photos }) => {
   ]
 
   return (
-    <section className="bg-bg py-16 flex flex-col items-center">
+    <section className="bg-card-bg py-16 flex flex-col items-center relative">
+      <img
+        src={bolas}
+        alt="decoracion"
+        className="absolute top-0 left-0 w-full object-cover rotate-180"
+      />
       {/* Título y Decoración */}
       <div className="text-center mb-8 px-6" data-aos="fade-up">
         <h2 className="text-white text-3xl font-serif mb-2 tracking-wide">
@@ -56,6 +62,11 @@ export const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ photos }) => {
           ))}
         </Swiper>
       </div>
+      <img
+        src={bolas}
+        alt="decoracion"
+        className="absolute bottom-0 right-0 w-full object-cover"
+      />
     </section>
   )
 }
