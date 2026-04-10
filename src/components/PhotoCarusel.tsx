@@ -42,7 +42,7 @@ export const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ photos }) => {
         <Swiper
           modules={[Pagination, Autoplay]}
           spaceBetween={20}
-          slidesPerView={1.2} // Esto hace que se vea un pedacito de la siguiente foto, igual que Fixdate
+          slidesPerView={2} // Esto hace que se vea un pedacito de la siguiente foto, igual que Fixdate
           centeredSlides={true}
           loop={true}
           autoplay={{ delay: 3000 }}
@@ -51,12 +51,22 @@ export const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ photos }) => {
         >
           {displayPhotos.map((photo, index) => (
             <SwiperSlide key={index}>
-              <div className="relative aspect-3/4 rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
-                <img
-                  src={photo}
-                  alt={`Momento ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
+              {/* Contenedor principal de la "tarjeta" Polaroid */}
+              <div className="mx-auto max-w-75 bg-white p-2 pb-8 shadow-xl">
+                {/* Contenedor de la imagen: aspect-video o aspect-[4/3] para que sea horizontal */}
+                <div className="aspect-4/3 w-full overflow-hidden">
+                  <img
+                    src={photo}
+                    alt={`Momento ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* El espacio blanco de abajo queda definido por el 'pb-8' del padre */}
+                {/* Si quieres escribir algo, puedes hacerlo aquí: */}
+                <div className="mt-4 text-center">
+                  <span className="opacity-0">.</span>
+                </div>
               </div>
             </SwiperSlide>
           ))}
@@ -65,7 +75,7 @@ export const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ photos }) => {
       <img
         src={bolas}
         alt="decoracion"
-        className="absolute bottom-0 right-0 w-full object-cover"
+        className="absolute bottom-0 right-0 w-full  object-cover"
       />
     </section>
   )
