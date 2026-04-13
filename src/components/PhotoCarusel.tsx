@@ -52,18 +52,15 @@ export const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ photos }) => {
           {displayPhotos.map((photo, index) => (
             <SwiperSlide key={index}>
               {/* Contenedor principal de la "tarjeta" Polaroid */}
-              <div className="mx-auto max-w-75 bg-white p-2 pb-8 shadow-xl">
+              <div className="mx-auto max-w-75 bg-white p-2 pb-2 shadow-xl">
                 {/* Contenedor de la imagen: aspect-video o aspect-[4/3] para que sea horizontal */}
-                <div className="aspect-4/3 w-full overflow-hidden">
-                  <img
-                    src={photo}
-                    alt={`Momento ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
 
-                {/* El espacio blanco de abajo queda definido por el 'pb-8' del padre */}
-                {/* Si quieres escribir algo, puedes hacerlo aquí: */}
+                <img
+                  src={photo}
+                  alt={`Momento ${index + 1}`}
+                  className="w-full max-h-72 object-cover"
+                />
+
                 <div className="mt-4 text-center">
                   <span className="opacity-0">.</span>
                 </div>

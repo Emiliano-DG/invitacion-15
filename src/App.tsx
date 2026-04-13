@@ -24,7 +24,10 @@ function App() {
       />
       <PhotoCarousel photos={invitationData.fotos} />
       <MusicSection playlistLink="" />
-      <Footer devName="EmiGe" socialLink="" />
+      <Footer
+        devName="EmiGe"
+        socialLink="https://www.linkedin.com/in/emiliano-geuna/"
+      />
     </>
   )
 }

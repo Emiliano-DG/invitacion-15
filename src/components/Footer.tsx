@@ -17,31 +17,15 @@ export const Footer: React.FC<FooterProps> = ({ devName, socialLink }) => {
         {/* Texto principal simplificado */}
         <div className="text-white/50 text-xs font-light tracking-widest uppercase">
           Desarrollado por{' '}
-          <span className="text-white font-semibold">{devName}</span>
-        </div>
-
-        {/* Botón de red social más pequeño y compacto */}
-        <a
-          href={socialLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-cyan-400 text-[10px] tracking-[0.2em] uppercase py-1.5 px-3 border border-cyan-400/30 rounded-md hover:bg-cyan-400/5 transition-all active:scale-95"
-        >
-          <svg
-            width="12"
-            height="12"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+          <a
+            href={socialLink}
+            className="text-cyan-400 font-semibold"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-          </svg>
-          Conóceme
-        </a>
+            {devName}
+          </a>
+        </div>
 
         {/* Copyright mínimo */}
         <p className="text-white/20 text-[9px] tracking-widest mt-2">
