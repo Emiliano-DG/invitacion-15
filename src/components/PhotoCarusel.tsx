@@ -1,37 +1,37 @@
-import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Autoplay } from 'swiper/modules'
-import bolas from '../assets/bolas.png'
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import bolas from "../assets/bolas.png";
 
 // Importar estilos de Swiper
-import 'swiper/css'
-import 'swiper/css/pagination'
+import "swiper/css";
+import "swiper/css/pagination";
 
 interface PhotoCarouselProps {
-  photos?: string[]
+  photos?: string[];
 }
 
 export const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ photos }) => {
   // Fotos de ejemplo si no hay nada en las props
   const displayPhotos = photos || [
-    'https://via.placeholder.com/600x800?text=Foto+1',
-    'https://via.placeholder.com/600x800?text=Foto+2',
-    'https://via.placeholder.com/600x800?text=Foto+3',
-  ]
+    "https://via.placeholder.com/600x800?text=Foto+1",
+    "https://via.placeholder.com/600x800?text=Foto+2",
+    "https://via.placeholder.com/600x800?text=Foto+3",
+  ];
 
   return (
     <section className="bg-card-bg py-16 flex flex-col items-center relative">
       <img
         src={bolas}
         alt="decoracion"
-        className="absolute top-0 left-0 w-full object-cover rotate-180"
+        className="absolute top-0 left-0 h-16 w-full object-cover rotate-180"
       />
       {/* Título y Decoración */}
       <div className="text-center mb-8 px-6" data-aos="fade-up">
-        <h2 className="text-white text-3xl font-serif mb-2 tracking-wide">
+        <h2 className="text-white text-5xl font-cormorant mb-2 tracking-wide">
           Un recorrido de estos 15 años
         </h2>
-        <p className="text-stone-400 text-sm font-light mb-6">
+        <p className="text-stone-400 text-base font-light font-raleway mb-6">
           Junto a personas que son muy importantes en mi vida
         </p>
         <div className="text-cyan-400 text-4xl mb-4">📷</div>
@@ -42,7 +42,7 @@ export const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ photos }) => {
         <Swiper
           modules={[Pagination, Autoplay]}
           spaceBetween={20}
-          slidesPerView={2} // Esto hace que se vea un pedacito de la siguiente foto, igual que Fixdate
+          slidesPerView={1.2} // Esto hace que se vea un pedacito de la siguiente foto, igual que Fixdate
           centeredSlides={true}
           loop={true}
           autoplay={{ delay: 3000 }}
@@ -58,7 +58,7 @@ export const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ photos }) => {
                 <img
                   src={photo}
                   alt={`Momento ${index + 1}`}
-                  className="w-full max-h-72 object-cover"
+                  className="w-full max-h-96 object-cover"
                 />
 
                 <div className="mt-4 text-center">
@@ -72,8 +72,8 @@ export const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ photos }) => {
       <img
         src={bolas}
         alt="decoracion"
-        className="absolute bottom-0 right-0 w-full  object-cover"
+        className="absolute bottom-0 right-0 w-full h-16 object-cover"
       />
     </section>
-  )
-}
+  );
+};

@@ -1,11 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Raleway:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
 @import 'tailwindcss';
 
 @theme {
   /* colores personalizables */
   --color-bg: #111;
-  --color-bg-black: #0a0a0a --color-primary: #58c2c8;
+  --color-bg-black: #0a0a0a;
+  --color-primary: #58c2c8;
   --color-text-white: #fff;
   --color-card-bg: #282828;
+
+  /*  FUENTES  */
+  --font-cormorant: 'Cormorant Garamond', serif;
+  --font-raleway: 'Raleway', sans-serif;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #0a0a0a;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: max(0px, env(safe-area-inset-top));
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* Estilos para que el carrusel Swiper quede igual a Fixdate */
