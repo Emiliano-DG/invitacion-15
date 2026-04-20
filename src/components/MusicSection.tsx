@@ -4,9 +4,9 @@ interface MusicSectionProps {
   playlistLink: string
 }
 
-export const MusicSection: React.FC<MusicSectionProps> = ({ playlistLink }) => {
+export const MusicSection = ({ playlistLink }: MusicSectionProps) => {
   return (
-    <section className="bg-bg-black py-30 px-6 flex flex-col items-center">
+    <section className="bg-bg-black py-30 px-6 flex flex-col items-center  border-b border-primary">
       {/* Título de la Sección */}
       <div className="text-center mb-10">
         <h2 className="text-white text-6xl font-cormorant mb-2 tracking-wide">
